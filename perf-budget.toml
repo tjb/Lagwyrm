@@ -1,0 +1,13 @@
+# CI perf gate. Checked by `lagwyrm-bot swarm --budget perf-budget.toml`.
+# The CI `perf` job runs: --bots 256 --ticks 3000, release build.
+# Budgets tighten as modules land; record each change in PROGRESS.md.
+
+[swarm]
+# 99th percentile time spent inside one server tick, in microseconds.
+# 30 Hz gives a 33_333us budget; this leaves room for networking and
+# persistence later. Module 5 (spatial grid) tightens it.
+tick_p99_us = 2000
+
+# Mean server-to-client bytes per second. Not measured until module 2, so
+# the gate skips it until then.
+bytes_per_client_per_sec = 16000

@@ -1,0 +1,15 @@
+[package]
+name = "lagwyrm-bot"
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[lints]
+workspace = true
+
+[dependencies]
+lagwyrm-sim.workspace = true
+lagwyrm-net.workspace = true
+lagwyrm-server.workspace = true
